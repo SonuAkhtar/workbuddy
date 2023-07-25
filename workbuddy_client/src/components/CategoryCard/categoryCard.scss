@@ -1,0 +1,44 @@
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+  height: 320px;
+  color: #fff;
+  border-radius: 1rem;
+  padding: 1rem 0;
+  position: relative;
+
+  .title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .image {
+    height: 10rem;
+    width: 10rem;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .desc {
+    font-weight: 300;
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+    text-align: center;
+  }
+
+  button {
+    color: #fff;
+    max-width: 200px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 5px #fff;
+  }
+}
