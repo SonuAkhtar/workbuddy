@@ -1,0 +1,131 @@
+.add {
+  display: flex;
+  justify-content: center;
+
+  main {
+    padding: 3rem 0;
+
+    h1 {
+      color: #000;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .sections {
+      display: flex;
+      justify-content: space-between;
+      gap: 5rem;
+
+      .left,
+      .right {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        label {
+          color: var(--main-gray-light);
+          font-weight: 400;
+          font-size: 1rem;
+        }
+
+        input,
+        select,
+        textarea {
+          outline: none;
+          padding: 1rem;
+          margin-bottom: 1rem;
+          border: 1px solid var(--main-gray-light);
+          border-radius: 0.5rem;
+          transition: all 0.5s ease-in-out;
+
+          &:focus {
+            border-radius: 2rem;
+            border-color: var(--main-green);
+            box-shadow: 0 1px 10px var(--main-gray-light);
+          }
+        }
+
+        .images {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1rem;
+
+          .imagesInputs {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+          }
+
+          button {
+            width: max-content;
+          }
+        }
+
+        button {
+          border: none;
+          outline: none;
+          padding: 1rem;
+          background-color: var(--main-green);
+          color: #fff;
+          font-weight: 500;
+          font-size: 1rem;
+          cursor: pointer;
+        }
+
+        .add {
+          display: flex;
+          justify-content: space-between;
+
+          input {
+            width: 100%;
+            border-radius: 0.5rem 0 0 0.5rem;
+            border-right: none;
+          }
+
+          button {
+            height: max-content;
+            padding: 1rem;
+            max-width: 5rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+          }
+        }
+
+        .addedFeatures {
+          display: flex;
+          gap: 1rem;
+
+          button {
+            height: 2rem;
+            font-size: 0.8rem;
+            font-weight: 400;
+            background: transparent;
+            color: var(--main-gray-dark);
+            box-shadow: 0 0 3px var(--main-gray-light);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            cursor: default;
+            border-radius: 2rem;
+
+            span {
+              height: 1.5rem;
+              width: 1.5rem;
+              font-size: 0.9rem;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: var(--main-red);
+              box-shadow: 0 0 3px var(--main-gray-light);
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
