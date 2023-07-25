@@ -1,0 +1,231 @@
+.service {
+  display: flex;
+  justify-content: center;
+
+  main {
+    padding: 2rem 0;
+    display: flex;
+    gap: 3rem;
+
+    .left {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+
+      .breadcrumbs {
+        font-weight: 300;
+        font-weight: 0.8rem;
+        color: lightgray;
+      }
+
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        img.profile {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+        }
+
+        span {
+          font-size: 0.9rem;
+          font-weight: 500;
+        }
+
+        .stars {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          img {
+            width: 0.9rem;
+            height: 0.9rem;
+          }
+
+          span {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #ffc108;
+          }
+        }
+      }
+
+      .slider {
+        img {
+          max-height: 500px;
+          object-fit: contain;
+        }
+      }
+
+      h2 {
+        font-weight: 400;
+      }
+
+      p {
+        font-weight: 300;
+        color: #666;
+        line-height: 1.5rem;
+      }
+
+      .seller {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 1.25rem;
+
+          img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          .info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+
+            .stars {
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+
+              img {
+                width: 0.9rem;
+                height: 0.9rem;
+              }
+
+              span {
+                font-size: 0.9rem;
+                font-weight: bold;
+                color: #ffc108;
+              }
+            }
+
+            button {
+              background-color: #fff;
+              border-radius: 0.5rem;
+              border: 1px solid gray;
+              padding: 0.75rem;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .box {
+          border: 1px solid lightgray;
+          border-radius: 0.75rem;
+          padding: 1.25rem;
+          margin-top: 1.25rem;
+
+          .items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .item {
+              width: 300px;
+              display: flex;
+              flex-direction: column;
+              gap: 0.75rem;
+              margin-bottom: 1.25rem;
+
+              .title {
+                font-weight: 300;
+              }
+            }
+          }
+
+          hr {
+            height: 0;
+            border: 1px solid lightgray;
+            margin-bottom: 1.25rem;
+          }
+        }
+      }
+    }
+
+    .right {
+      flex: 1;
+
+      border: 1px solid lightgray;
+      padding: 1.25rem;
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      position: sticky;
+      top: 150px;
+      height: max-content;
+      max-height: 500px;
+
+      .price {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h3 {
+          font-weight: 400;
+        }
+      }
+
+      p {
+        color: gray;
+        margin: 0.75rem;
+      }
+
+      .details {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.9rem;
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+
+          img {
+            width: 1.25rem;
+          }
+        }
+      }
+
+      .features {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          font-weight: 300;
+          color: gray;
+
+          img {
+            width: 0.9rem;
+          }
+        }
+      }
+      button {
+        background-color: #1dbf73;
+        padding: 0.75rem;
+        color: #fff;
+        border: none;
+        outline: none;
+        font-weight: 500;
+        font-size: 1.1rem;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+.myGigs {
+  display: flex;
+  justify-content: center;
+
+  main {
+    padding: 2rem 0;
+
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      button {
+        background-color: var(--main-green);
+        color: #fff;
+        font-weight: 500;
+        border: none;
+        outline: none;
+        padding: 0.75rem 1rem;
+        cursor: pointer;
+      }
+    }
+
+    table {
+      width: 100%;
+
+      tr {
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: #1dbf730f;
+        }
+
+        th {
+          padding: 0.75rem 0.5rem;
+          text-align: left;
+        }
+
+        td {
+          padding: 0.75rem 0.5rem;
+
+          .img {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          i {
+            padding: 0.5rem;
+            border-radius: 50%;
+            color: var(--main-red);
+            cursor: pointer;
+          }
+        }
+
+        &:nth-child(even) {
+          background-color: #1dbf730f;
+        }
+      }
+    }
+  }
+}
