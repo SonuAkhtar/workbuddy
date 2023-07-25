@@ -1,0 +1,47 @@
+.reviews {
+  margin-top: 3rem;
+
+  .add {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      input {
+        outline: none;
+        border: 1px solid lightblue;
+        padding: 20px;
+      }
+
+      select {
+        width: 200px;
+        padding: 20px;
+        border: 1px solid lightblue;
+        align-self: flex-end;
+        cursor: pointer;
+      }
+
+      button {
+        align-self: flex-end;
+        width: 100px;
+        padding: 10px;
+        border: none;
+        outline: none;
+        color: #fff;
+        background-color: #1dbf73;
+        cursor: pointer;
+      }
+    }
+  }
+
+  hr {
+    height: 0;
+    border: 1px solid lightgray;
+    margin: 3rem 0;
+  }
+}

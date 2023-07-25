@@ -1,0 +1,271 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--main-black-light);
+  color: #fff;
+  transition: 0.5s ease all;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition: all 0.5s ease;
+
+  &.active {
+    background-color: var(--main-white);
+    color: var(--main-black-light);
+
+    button {
+      color: var(--main-black-light);
+    }
+  }
+
+  main {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.25rem 0;
+
+    .logo {
+      position: relative;
+      font-size: 1.8rem;
+      font-weight: 200;
+      z-index: 999;
+      letter-spacing: 1px;
+      cursor: pointer;
+
+      .buddy {
+        font-weight: 500;
+        margin-left: 0.2rem;
+      }
+
+      .dot {
+        position: absolute;
+        top: -0.2rem;
+        height: 5px;
+        width: 5px;
+        border-radius: 50%;
+        background-color: var(--main-green);
+        transition: all 0.5s ease-in-out;
+      }
+
+      .dot.loaded {
+        top: 1.1rem;
+        width: 70px;
+        height: 2px;
+        border-radius: 0.5rem;
+      }
+
+      .dot1 {
+        left: 3.2rem;
+      }
+
+      .dot2 {
+        left: 4.3rem;
+      }
+
+      .dot1.loaded {
+        left: -0.5rem;
+      }
+
+      .dot2.loaded {
+        width: 90px;
+        left: 4.1rem;
+      }
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-weight: 300;
+      font-family: "Montserrat", sans-serif;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      .link {
+        position: relative;
+        white-space: nowrap;
+
+        &::before {
+          position: absolute;
+          bottom: -0.25rem;
+          left: 0;
+          content: "";
+          height: 2px;
+          width: 0;
+          border-radius: 1rem;
+          background-color: var(--main-green);
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:hover,
+        &.active {
+          &::before {
+            width: 100%;
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          font-weight: 600;
+          font-size: 1.5rem;
+        }
+      }
+
+      .user {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        cursor: pointer;
+
+        img {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        .options {
+          position: absolute;
+          top: 2.5rem;
+          right: 0;
+          padding: 1.25rem;
+          background-color: #fff;
+          border: 1px solid lightgray;
+          border-radius: 0.5rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+          color: #000;
+          width: 100px;
+          font-weight: 300;
+          scale: 0;
+          transition: all 0.5s ease-in-out;
+          cursor: default;
+          z-index: 999;
+        }
+
+        .options.open {
+          scale: 1;
+        }
+
+        a {
+          position: relative;
+        }
+
+        a::before {
+          position: absolute;
+          bottom: -0.2rem;
+          left: 0;
+          content: "";
+          height: 2px;
+          width: 0;
+          border-radius: 50%;
+          background-color: var(--main-green);
+          transition: all 0.3s ease;
+        }
+
+        a:hover::before {
+          width: 100%;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        position: absolute;
+        top: 0;
+        left: -2rem;
+        height: 100vh;
+        width: 100vw;
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+        background-color: var(--main-white);
+        outline: 1px solid var(--main-green);
+        transform: translateX(102vh);
+
+        &.show {
+          transform: translate(0);
+        }
+      }
+    }
+
+    button {
+      border: 1px solid var(--main-green);
+      font-weight: 500;
+      color: var(--main-white);
+
+      &:hover,
+      &.active {
+        border-radius: 2rem;
+
+        background-color: var(--main-green);
+      }
+
+      @media screen and (max-width: 768px) {
+        width: 70%;
+        font-weight: 600;
+        font-size: 1.5rem;
+      }
+    }
+
+    .mobile_menu {
+      position: absolute;
+      top: 0;
+      right: 0rem;
+      height: 100%;
+      font-size: 1.5rem;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      display: none;
+
+      .burger,
+      .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: all 0.5s ease;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        scale: 0;
+      }
+
+      .burger.active,
+      .close.active {
+        scale: 1;
+      }
+
+      @media screen and (max-width: 768px) {
+        display: flex;
+      }
+    }
+  }
+
+  hr {
+    width: 100%;
+    height: 0;
+    border: 1px solid lightgray;
+    z-index: 99;
+  }
+
+  .menu {
+    width: var(--max-width);
+    padding: 0.75rem 0;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 300;
+    color: gray;
+    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif;
+
+    &.hide {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 0 2rem;
+  }
+}

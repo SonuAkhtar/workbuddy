@@ -1,0 +1,55 @@
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 1.25rem 0;
+
+  .user {
+    display: flex;
+    align-items: center;
+
+    .profile {
+      height: 3rem;
+      width: 3rem;
+      border-radius: 50%;
+    }
+
+    .country {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: gray;
+
+      img {
+        width: 1.25rem;
+      }
+    }
+  }
+
+  .stars {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    img {
+      width: 0.9rem;
+      height: 0.9rem;
+    }
+
+    span {
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #ffc108;
+    }
+  }
+
+  .helpful {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    img {
+      width: 0.9rem;
+    }
+  }
+}
