@@ -34,7 +34,7 @@ app.use(cookieParser());
 // use routes
 app.use("/api/auth", authRoute);
 app.use("/api/conversations", conversationRoute);
-app.use("/api/gigs", serviceRoute);
+app.use("/api/services", serviceRoute);
 app.use("/api/messages", messageRoute);
 app.use("/api/orders", orderRoute);
 app.use("/api/reviews", reviewRoute);
