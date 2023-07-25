@@ -1,0 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+
+  .link {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+//root style variables
+:root {
+  --max-width: 1200px;
+  --main-black: #000000;
+  --main-black-light: #202020;
+  --main-white: #ffffff;
+  --main-off-white: #f5f5f5;
+  --main-red: #ec4e2b;
+  --main-green: #86c232;
+  --main-yellow: #faed26;
+  --main-gray-dark: #5a5560;
+  --main-gray-light: #9d8d8f;
+  --main-brown: #9b786f;
+}
+
+//globale styles
+main {
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+button {
+  background-color: transparent;
+  outline: none;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all ease 0.3s;
+
+  &:hover {
+    border-radius: 2rem;
+  }
+}
