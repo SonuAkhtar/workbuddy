@@ -86,11 +86,11 @@ const Navbar = () => {
               <div className={`options ${menuOpen ? "open" : ""}`}>
                 {currentUser?.isSeller && (
                   <>
-                    <Link className="link" to="/myGigs">
-                      Gigs
+                    <Link className="link" to="/myservices">
+                      Services
                     </Link>
                     <Link className="link" to="/add">
-                      Add New Gig
+                      Add New Service
                     </Link>
                   </>
                 )}

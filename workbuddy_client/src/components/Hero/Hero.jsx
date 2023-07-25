@@ -7,7 +7,7 @@ const Hero = () => {
   const navigate = useNavigate();
 
   const handleSeaerch = () => {
-    navigate(`/gigs?search=${input}`);
+    navigate(`/services?search=${input}`);
   };
 
   return (
@@ -30,13 +30,13 @@ const Hero = () => {
           </div>
           <div className="popular">
             <span>Frequent Searched:</span>
-            <button onClick={() => navigate("/gigs?search=uiux")}>
+            <button onClick={() => navigate("/services?search=uiux")}>
               UI/UX Design
             </button>
-            <button onClick={() => navigate("/gigs?search=web")}>
+            <button onClick={() => navigate("/services?search=web")}>
               Web Development
             </button>
-            <button onClick={() => navigate("/gigs?search=ai")}>
+            <button onClick={() => navigate("/services?search=ai")}>
               AI Services
             </button>
           </div>

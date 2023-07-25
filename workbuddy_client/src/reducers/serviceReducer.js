@@ -13,7 +13,7 @@ export const INITIAL_STATE = {
   price: 0,
 };
 
-export const gigReducer = (state, action) => {
+export const serviceReducer = (state, action) => {
   switch (action.type) {
     case "CHANGE_INPUT":
       return {

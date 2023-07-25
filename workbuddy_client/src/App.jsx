@@ -6,12 +6,12 @@ import "./app.scss";
 //Pages
 import Add from "./pages/Add/Add";
 import Homepage from "./pages/Homepage/Homepage";
-import Gig from "./pages/Gig/Gig";
-import Gigs from "./pages/Gigs/Gigs";
+import Service from "./pages/Service/Service";
+import Services from "./pages/Services/Services";
 import Login from "./pages/Login/Login";
 import Message from "./pages/Message/Message";
 import Messages from "./pages/Messages/Messages";
-import MyGigs from "./pages/MyGigs/MyGigs";
+import MyServices from "./pages/MyServices/MyServices";
 import Orders from "./pages/Orders/Orders";
 import Register from "./pages/Register/Register";
 
@@ -49,12 +49,12 @@ function App() {
           element: <Add />,
         },
         {
-          path: "/gigs",
-          element: <Gigs />,
+          path: "/Services",
+          element: <Services />,
         },
         {
-          path: "/gig/:id",
-          element: <Gig />,
+          path: "/Service/:id",
+          element: <Service />,
         },
         {
           path: "/login",
@@ -69,8 +69,8 @@ function App() {
           element: <Messages />,
         },
         {
-          path: "/myGigs",
-          element: <MyGigs />,
+          path: "/myServices",
+          element: <MyServices />,
         },
         {
           path: "/orders",

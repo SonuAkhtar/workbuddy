@@ -18,7 +18,7 @@ const CategoryCard = ({ item }) => {
         <img src={item.image} alt="image" />
       </div>
       <span className="desc">{item.desc}</span>
-      <button onClick={() => navigate("/gigs?cat=design")}>Explore</button>
+      <button onClick={() => navigate("/services?cat=design")}>Explore</button>
     </div>
   );
 };

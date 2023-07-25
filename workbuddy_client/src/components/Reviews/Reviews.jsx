@@ -4,13 +4,13 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import createRequest from "../../utils/createRequest";
 import "./reviews.scss";
 
-const Reviews = ({ gigId }) => {
+const Reviews = ({ serviceId }) => {
   const queryClient = useQueryClient();
 
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ["reviews"],
     queryFn: () =>
-      createRequest.get(`/reviews/${gigId}`).then((res) => {
+      createRequest.get(`/reviews/${serviceId}`).then((res) => {
         return res.data;
       }),
   });
@@ -31,7 +31,7 @@ const Reviews = ({ gigId }) => {
     let desc = e.target[0].value;
     let star = e.target[1].value;
 
-    mutation.mutate({ gigId, desc, star });
+    mutation.mutate({ serviceId, desc, star });
   };
 
   return (

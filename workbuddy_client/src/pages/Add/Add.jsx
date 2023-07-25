@@ -1,5 +1,5 @@
 import React, { useReducer, useState } from "react";
-import { INITIAL_STATE, gigReducer } from "../../reducers/gigReducer";
+import { INITIAL_STATE, serviceReducer } from "../../reducers/serviceReducer";
 import upload from "../../utils/upload";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import createRequest from "../../utils/createRequest";
@@ -13,7 +13,7 @@ const Add = () => {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
-  const [state, dispatch] = useReducer(gigReducer, INITIAL_STATE);
+  const [state, dispatch] = useReducer(serviceReducer, INITIAL_STATE);
 
   const handleChange = (e) => {
     dispatch({
@@ -43,11 +43,11 @@ const Add = () => {
   };
 
   const mutation = useMutation({
-    mutationFn: (gig) => {
-      return createRequest.post("/gigs", gig);
+    mutationFn: (service) => {
+      return createRequest.post("/services", service);
     },
     onSuccess: () => {
-      queryClient.invalidateQueries(["myGigs"]);
+      queryClient.invalidateQueries(["myServices"]);
     },
   });
 
@@ -68,13 +68,13 @@ const Add = () => {
     e.preventDefault();
     mutation.mutate(state);
 
-    navigate("/myGigs");
+    navigate("/myServices");
   };
 
   return (
     <section className="add">
       <main>
-        <h1>Add new Gig</h1>
+        <h1>Add new Service</h1>
         <div className="sections">
           <div className="left">
             <input
