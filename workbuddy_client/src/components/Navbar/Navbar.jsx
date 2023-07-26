@@ -77,27 +77,47 @@ const Navbar = () => {
             </span>
           )}
           {currentUser ? (
-            <div className="user" onClick={() => setMenuOpen(!menuOpen)}>
+            <div className="user">
               <img
                 src={currentUser.img || "/images/noavatar.jpg"}
                 alt="user-image"
               />
               <span>{currentUser?.username}</span>
+              <i
+                class="fa-solid fa-angle-down"
+                onClick={() => setMenuOpen(!menuOpen)}
+              ></i>
               <div className={`options ${menuOpen ? "open" : ""}`}>
                 {currentUser?.isSeller && (
                   <>
-                    <Link className="link" to="/myservices">
+                    <Link
+                      className="link"
+                      to="/myservices"
+                      onClick={() => setMenuOpen(false)}
+                    >
                       Services
                     </Link>
-                    <Link className="link" to="/add">
+                    <Link
+                      className="link"
+                      to="/add"
+                      onClick={() => setMenuOpen(false)}
+                    >
                       Add New Service
                     </Link>
                   </>
                 )}
-                <Link className="link" to="/orders">
+                <Link
+                  className="link"
+                  to="/orders"
+                  onClick={() => setMenuOpen(false)}
+                >
                   Orders
                 </Link>
-                <Link className="link" to="/messages">
+                <Link
+                  className="link"
+                  to="/messages"
+                  onClick={() => setMenuOpen(false)}
+                >
                   Messages
                 </Link>
                 <Link className="link" onClick={handleLogout}>

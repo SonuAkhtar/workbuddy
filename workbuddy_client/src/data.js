@@ -58,62 +58,34 @@ export const category = [
   },
 ];
 
-export const projects = [
+export const populars = [
   {
     id: 0,
-    image: "/images/projects/web.jpg",
-    pp: "/images/projects/person1.jpg",
+    image: "/images/popular/person1.png",
     cat: "Web Apps",
     username: "Saige Fuentes",
+    bgColor: "#f95959",
   },
   {
     id: 1,
-    image: "/images/projects/mobile.jpg",
-    pp: "/images/projects/person2.jpg",
+    image: "/images/popular/person2.png",
     cat: "Mobile Apps",
     username: "Bowen Higgins",
+    bgColor: "#66bfbf",
   },
   {
     id: 2,
-    image: "/images/projects/cloud.jpg",
-    pp: "/images/projects/person3.jpg",
+    image: "/images/popular/person3.png",
     cat: "Cloud Services",
     username: "Leighton Kramer",
+    bgColor: "#6643b5",
   },
   {
     id: 3,
-    image: "/images/projects/graphics.jpg",
-    pp: "/images/projects/person4.jpg",
+    image: "/images/popular/person4.png",
     cat: "Graphics Design",
     username: "Kylan Gentry",
-  },
-  {
-    id: 4,
-    image: "/images/projects/animations.jpg",
-    pp: "/images/projects/person5.jpg",
-    cat: "Animations",
-    username: "Amelie Griffith",
-  },
-  {
-    id: 5,
-    image: "/images/projects/music.avif",
-    pp: "/images/projects/person6.jpg",
-    cat: "Music Generation",
-    username: "Marceline Avila",
-  },
-  {
-    id: 6,
-    image: "/images/projects/ai.jpg",
-    pp: "/images/projects/person7.jpg",
-    cat: "AI Images",
-    username: "Franklin Sierra",
-  },
-  {
-    id: 7,
-    image: "/images/projects/uiux.avif",
-    pp: "/images/projects/person8.jpg",
-    cat: "UI/UX design",
-    username: "Jaylen Blackwel",
+    bgColor: "#a2c11c",
   },
 ];
 
