@@ -39,7 +39,7 @@ const MyServices = () => {
       ) : (
         <main>
           <div className="title">
-            <h1>Services</h1>
+            <h1>My Services</h1>
             <Link to="/serviceAdd">
               <button>Add New Service</button>
             </Link>

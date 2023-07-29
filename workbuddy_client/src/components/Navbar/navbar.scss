@@ -154,7 +154,7 @@
           scale: 1;
         }
 
-        a {
+        .link {
           position: relative;
           font-weight: 400;
         }
@@ -301,6 +301,10 @@
         .link {
           font-weight: 600;
           font-size: 1.5rem;
+        }
+
+        .user .options .link {
+          font-size: 0.9rem;
         }
       }
 

@@ -1,6 +1,8 @@
 .myServices {
   display: flex;
   justify-content: center;
+  padding: 0 1rem;
+  overflow-x: scroll;
 
   main {
     padding: 2rem 0;
@@ -9,6 +11,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      h1 {
+        font-size: 3rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
 
       button {
         background-color: var(--main-green);
@@ -23,6 +31,7 @@
 
     table {
       width: 100%;
+      min-width: 700px;
 
       tr {
         transition: all 0.3s ease;
@@ -56,6 +65,22 @@
 
         &:nth-child(even) {
           background-color: #1dbf730f;
+        }
+      }
+    }
+  }
+
+  // Responsive screens
+  @media screen and (max-width: 960px) {
+    main {
+      .title {
+        flex-direction: column;
+        align-items: flex-start;
+
+        h1 {
+          margin: 1rem 0;
+          font-size: 2rem;
+          width: max-content;
         }
       }
     }

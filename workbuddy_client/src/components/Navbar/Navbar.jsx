@@ -4,10 +4,10 @@ import createRequest from "../../utils/createRequest";
 import "./navbar.scss";
 
 const Navbar = () => {
-  const [active, setActive] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const [moveDots, setMoveDots] = useState(false);
-  const [menuClick, setMenuClick] = useState(false);
+  const [navActive, setNavActive] = useState(false);
+  const [showUserMenu, setShowUserMenu] = useState(false);
+  const [burgerMenu, setBurgerMenu] = useState(false);
 
   const { pathname } = useLocation();
   const navigate = useNavigate();
@@ -26,7 +26,7 @@ const Navbar = () => {
   }, []);
 
   const isActive = () => {
-    window.scrollY > 0 ? setActive(true) : setActive(false);
+    window.scrollY > 0 ? setNavActive(true) : setNavActive(false);
   };
 
   const handleLogout = async () => {
@@ -40,14 +40,20 @@ const Navbar = () => {
   };
 
   const handleNavClick = (path) => {
-    setMenuClick(false);
+    setBurgerMenu(false);
+    navigate(path);
+  };
+
+  const handleUserMenuClick = (path) => {
+    setBurgerMenu(false);
+    setShowUserMenu(false);
     navigate(path);
   };
 
   return (
-    <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
+    <div className={navActive || pathname !== "/" ? "navbar active" : "navbar"}>
       <main>
-        <div className={`logo ${menuClick && "show"}`}>
+        <div className={`logo ${burgerMenu && "show"}`}>
           <span onClick={() => handleNavClick("/")} className="link">
             work
             <span className={`dot dot1 ${moveDots ? "loaded" : ""}`}></span>
@@ -55,7 +61,7 @@ const Navbar = () => {
             <span className="buddy">buddy</span>
           </span>
         </div>
-        <div className={`links ${menuClick && "show"}`}>
+        <div className={`links ${burgerMenu && "show"}`}>
           <span
             onClick={() => handleNavClick("/")}
             className={`link ${pathname === "/business" && "active"}`}
@@ -85,41 +91,37 @@ const Navbar = () => {
               <span>{currentUser?.username}</span>
               <i
                 class="fa-solid fa-angle-down"
-                onClick={() => setMenuOpen(!menuOpen)}
+                onClick={() => setShowUserMenu(!showUserMenu)}
               ></i>
-              <div className={`options ${menuOpen ? "open" : ""}`}>
+              <div className={`options ${showUserMenu ? "open" : ""}`}>
                 {currentUser?.isSeller && (
                   <>
-                    <Link
+                    <span
                       className="link"
-                      to="/myservices"
-                      onClick={() => setMenuOpen(false)}
+                      onClick={() => handleUserMenuClick("/myservices")}
                     >
-                      Services
-                    </Link>
-                    <Link
+                      My Services
+                    </span>
+                    <span
                       className="link"
-                      to="/serviceAdd"
-                      onClick={() => setMenuOpen(false)}
+                      onClick={() => handleUserMenuClick("/serviceAdd")}
                     >
-                      Add New Service
-                    </Link>
+                      Add A Service
+                    </span>
                   </>
                 )}
-                <Link
+                <span
                   className="link"
-                  to="/orders"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={() => handleUserMenuClick("/orders")}
                 >
                   Orders
-                </Link>
-                <Link
+                </span>
+                <span
                   className="link"
-                  to="/messages"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={() => handleUserMenuClick("/messages")}
                 >
                   Messages
-                </Link>
+                </span>
                 <Link className="link" onClick={handleLogout}>
                   Logout
                 </Link>
@@ -144,22 +146,22 @@ const Navbar = () => {
         </div>
 
         <div
-          className={`mobile_menu ${menuClick && "show"}`}
-          onClick={() => setMenuClick(!menuClick)}
+          className={`mobile_menu ${burgerMenu && "show"}`}
+          onClick={() => setBurgerMenu(!burgerMenu)}
         >
-          <span className={`burger ${menuClick ? "" : "active"}`}>
+          <span className={`burger ${burgerMenu ? "" : "active"}`}>
             <i className="fa-solid fa-bars"></i>
           </span>
-          <div className={`close ${menuClick ? "active" : ""}`}>
+          <div className={`close ${burgerMenu ? "active" : ""}`}>
             <i className="fa-solid fa-xmark"></i>
           </div>
         </div>
       </main>
-      {(active || pathname !== "/") && (
+      {(navActive || pathname !== "/") && (
         <>
           {pathname !== "/login" && pathname !== "/register" && <hr />}
           <div
-            className={`menu ${menuClick ? "active" : ""} ${
+            className={`menu ${burgerMenu ? "active" : ""} ${
               pathname === "/login" || pathname === "/register" ? "hide" : ""
             }`}
           >
