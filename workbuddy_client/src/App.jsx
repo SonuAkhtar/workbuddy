@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "./app.scss";
 
 //Pages
-import Add from "./pages/Add/Add";
+import ServiceAdd from "./pages/ServiceAdd/ServiceAdd";
 import Homepage from "./pages/Homepage/Homepage";
 import Service from "./pages/Service/Service";
 import Services from "./pages/Services/Services";
@@ -45,8 +45,8 @@ function App() {
           element: <Homepage />,
         },
         {
-          path: "/add",
-          element: <Add />,
+          path: "/serviceAdd",
+          element: <ServiceAdd />,
         },
         {
           path: "/Services",

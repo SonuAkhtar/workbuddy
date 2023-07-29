@@ -40,7 +40,7 @@ const MyServices = () => {
         <main>
           <div className="title">
             <h1>Services</h1>
-            <Link to="/add">
+            <Link to="/serviceAdd">
               <button>Add New Service</button>
             </Link>
           </div>

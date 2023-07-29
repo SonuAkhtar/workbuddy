@@ -99,7 +99,7 @@ const Navbar = () => {
                     </Link>
                     <Link
                       className="link"
-                      to="/add"
+                      to="/serviceAdd"
                       onClick={() => setMenuOpen(false)}
                     >
                       Add New Service

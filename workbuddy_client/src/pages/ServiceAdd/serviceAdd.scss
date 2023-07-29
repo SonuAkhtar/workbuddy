@@ -1,11 +1,13 @@
-.add {
+.serviceAdd {
   display: flex;
   justify-content: center;
+  padding: 0 1rem;
 
   main {
-    padding: 3rem 0;
+    padding: 1rem 0 3rem 0;
 
     h1 {
+      font-size: 3rem;
       color: #000;
       font-weight: 500;
       text-align: center;
@@ -76,7 +78,7 @@
           cursor: pointer;
         }
 
-        .add {
+        .serviceAdd {
           display: flex;
           justify-content: space-between;
 
@@ -94,34 +96,89 @@
           }
         }
 
-        .addedFeatures {
+        form {
           display: flex;
-          gap: 1rem;
+
+          input {
+            width: 80%;
+            border-radius: 0.5rem 0 0 0.5rem;
+          }
 
           button {
-            height: 2rem;
-            font-size: 0.8rem;
-            font-weight: 400;
-            background: transparent;
-            color: var(--main-gray-dark);
-            box-shadow: 0 0 3px var(--main-gray-light);
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            cursor: default;
-            border-radius: 2rem;
+            height: max-content;
+            width: 20%;
+            border-radius: 0 0.5rem 0.5rem 0;
+          }
 
-            span {
-              height: 1.5rem;
-              width: 1.5rem;
-              font-size: 0.9rem;
-              border-radius: 50%;
+          .addedFeatures {
+            display: flex;
+            gap: 1rem;
+
+            button {
+              height: 2rem;
+              font-size: 0.8rem;
+              font-weight: 400;
+              color: var(--main-gray-dark);
+              background: transparent;
+              box-shadow: 0 0 3px var(--main-gray-light);
               display: flex;
               align-items: center;
-              justify-content: center;
-              color: var(--main-red);
-              box-shadow: 0 0 3px var(--main-gray-light);
-              cursor: pointer;
+              gap: 20px;
+              cursor: default;
+              border-radius: 2rem;
+
+              span {
+                height: 1.5rem;
+                width: 1.5rem;
+                font-size: 0.9rem;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--main-red);
+                box-shadow: 0 0 3px var(--main-gray-light);
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Responsive screens
+  @media screen and (max-width: 960px) {
+    main {
+      margin-top: 1rem;
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .sections {
+        flex-direction: column-reverse;
+        gap: 1rem;
+
+        .left,
+        .right {
+          input,
+          select,
+          textarea {
+            margin-bottom: 0.5rem;
+            padding: 0.75rem;
+          }
+
+          button {
+            padding: 0.75rem;
+          }
+
+          .images {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+
+            .imagesInputs {
+              gap: 0.5rem;
             }
           }
         }

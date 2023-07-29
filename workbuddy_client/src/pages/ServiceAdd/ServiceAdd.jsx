@@ -4,9 +4,9 @@ import upload from "../../utils/upload";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import createRequest from "../../utils/createRequest";
 import { useNavigate } from "react-router-dom";
-import "./add.scss";
+import "./serviceAdd.scss";
 
-const Add = () => {
+const ServiceAdd = () => {
   const [singleFile, setSingleFile] = useState(undefined);
   const [files, setFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
@@ -72,7 +72,7 @@ const Add = () => {
   };
 
   return (
-    <section className="add">
+    <section className="serviceAdd">
       <main>
         <h1>Add new Service</h1>
         <div className="sections">
@@ -199,4 +199,4 @@ const Add = () => {
   );
 };
 
-export default Add;
+export default ServiceAdd;
