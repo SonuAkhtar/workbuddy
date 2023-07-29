@@ -38,9 +38,7 @@ const Messages = () => {
         "Something went wrong"
       ) : (
         <main>
-          <div className="title">
-            <h1>Messages</h1>
-          </div>
+          <h1>Messages</h1>
           <table>
             <thead>
               <tr>

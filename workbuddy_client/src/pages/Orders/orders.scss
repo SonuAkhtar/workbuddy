@@ -8,9 +8,9 @@
     padding: 1rem 0 3rem 0;
 
     h1 {
-      margin-bottom: 1rem;
       font-size: 3rem;
       font-weight: 500;
+      margin-bottom: 1rem;
     }
 
     table {
@@ -19,6 +19,7 @@
 
       tr {
         transition: all 0.3s ease;
+
         &:hover {
           background-color: #1dbf730f;
         }
@@ -51,6 +52,14 @@
           background-color: #1dbf730f;
         }
       }
+    }
+  }
+
+  // Responsive screens
+  @media screen and (max-width: 768px) {
+    main h1 {
+      margin: 1rem 0;
+      font-size: 2rem;
     }
   }
 }

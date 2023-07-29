@@ -1,29 +1,32 @@
 .messages {
   display: flex;
   justify-content: center;
+  padding: 0 1rem;
+  overflow-x: scroll;
 
   main {
-    padding: 50px 0;
+    padding: 1rem 0 3rem 0;
 
-    .title {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    h1 {
+      font-size: 3rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
     }
 
     table {
       width: 100%;
+      min-width: 700px;
 
       tr {
-        height: 50px;
+        transition: all 0.3s ease;
 
         th {
           text-align: left;
+          padding: 0.75rem 0.5rem;
         }
 
         td {
-          padding: 10px;
-          height: 100px;
+          padding: 0.75rem 0.5rem;
 
           &:first-child {
             font-weight: 500;
@@ -49,6 +52,14 @@
           background-color: #1dbf730f;
         }
       }
+    }
+  }
+
+  // Responsive screens
+  @media screen and (max-width: 768px) {
+    main h1 {
+      margin: 1rem 0;
+      font-size: 2rem;
     }
   }
 }
