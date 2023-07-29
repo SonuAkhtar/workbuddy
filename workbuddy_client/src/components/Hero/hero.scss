@@ -13,6 +13,7 @@
       display: flex;
       flex-direction: column;
       gap: 2rem;
+      z-index: 99;
 
       h1 {
         font-size: 1.5rem;
@@ -34,12 +35,13 @@
         background-color: #fff;
         border-radius: 0.5rem;
         border: 1px solid #fff;
+        width: 100%;
 
         .searchInput {
           display: flex;
           align-items: center;
           gap: 0.75rem;
-          width: 100%;
+          width: 300px;
 
           i {
             color: var(--main-gray-dark);
@@ -66,7 +68,7 @@
         }
       }
 
-      .popular {
+      .frequent {
         display: flex;
         align-items: center;
         gap: 0.75rem;
@@ -95,8 +97,70 @@
 
       img {
         height: 100%;
+        width: 100%;
         object-fit: contain;
         filter: drop-shadow(-5px 10px 20px rgba(0, 0, 0, 0.2));
+      }
+    }
+  }
+
+  // Responsive screens
+  @media screen and (max-width: 960px) {
+    height: 60vh;
+    padding: 0 1rem;
+
+    main {
+      justify-content: center;
+
+      .left {
+        width: 100%;
+
+        h1 {
+          width: 100%;
+          text-align: center;
+          font-size: 1.25rem;
+          white-space: wrap;
+
+          span {
+            font-size: 2.2rem;
+          }
+        }
+      }
+
+      .right {
+        position: absolute;
+        width: 50%;
+        opacity: 0.75;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    main {
+      .left {
+        .search {
+          button {
+            width: 100px;
+            height: 40px;
+          }
+        }
+
+        .frequent {
+          flex-wrap: wrap;
+
+          span {
+            width: 100%;
+          }
+
+          button {
+            padding: 0.5rem;
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      .right {
+        width: 80%;
       }
     }
   }

@@ -28,7 +28,7 @@ const Hero = () => {
             </div>
             <button onClick={handleSeaerch}>Search</button>
           </div>
-          <div className="popular">
+          <div className="frequent">
             <span>Frequent Searched:</span>
             <button onClick={() => navigate("/services?search=uiux")}>
               UI/UX Design
