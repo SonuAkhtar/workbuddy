@@ -4,6 +4,7 @@
   justify-content: center;
   background-color: #4f8700;
   color: #fff;
+  padding: 0 1rem;
 
   main {
     display: flex;
@@ -16,12 +17,7 @@
       z-index: 99;
 
       h1 {
-        font-size: 1.5rem;
-        font-weight: 300;
-
         span {
-          font-size: 3rem;
-          font-weight: 500;
           color: transparent;
           -webkit-text-stroke-width: 1px;
           -webkit-text-stroke-color: var(--main-white);
@@ -107,25 +103,9 @@
   // Responsive screens
   @media screen and (max-width: 960px) {
     height: 60vh;
-    padding: 0 1rem;
 
     main {
       justify-content: center;
-
-      .left {
-        width: 100%;
-
-        h1 {
-          width: 100%;
-          text-align: center;
-          font-size: 1.25rem;
-          white-space: wrap;
-
-          span {
-            font-size: 2.2rem;
-          }
-        }
-      }
 
       .right {
         position: absolute;
@@ -138,6 +118,8 @@
   @media screen and (max-width: 768px) {
     main {
       .left {
+        width: 95%;
+
         .search {
           button {
             width: 100px;

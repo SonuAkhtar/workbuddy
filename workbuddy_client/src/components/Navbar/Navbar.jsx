@@ -47,7 +47,7 @@ const Navbar = () => {
   return (
     <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
       <main>
-        <div className="logo">
+        <div className={`logo ${menuClick && "show"}`}>
           <span onClick={() => handleNavClick("/")} className="link">
             work
             <span className={`dot dot1 ${moveDots ? "loaded" : ""}`}></span>
@@ -143,7 +143,10 @@ const Navbar = () => {
           )}
         </div>
 
-        <div className="mobile_menu" onClick={() => setMenuClick(!menuClick)}>
+        <div
+          className={`mobile_menu ${menuClick && "show"}`}
+          onClick={() => setMenuClick(!menuClick)}
+        >
           <span className={`burger ${menuClick ? "" : "active"}`}>
             <i className="fa-solid fa-bars"></i>
           </span>
@@ -156,7 +159,7 @@ const Navbar = () => {
         <>
           {pathname !== "/login" && pathname !== "/register" && <hr />}
           <div
-            className={`menu ${
+            className={`menu ${menuClick ? "active" : ""} ${
               pathname === "/login" || pathname === "/register" ? "hide" : ""
             }`}
           >

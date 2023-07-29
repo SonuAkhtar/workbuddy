@@ -6,14 +6,16 @@ import "./popular.scss";
 const Popular = () => {
   return (
     <div className="popular">
-      <h1>
-        Meet our<span>Popular Experts</span>across the tech
-      </h1>
-
       <main>
-        {populars.map((card) => (
-          <PopularCard key={card.id} item={card} />
-        ))}
+        <h1>
+          Meet our<span>Popular Experts</span>across the tech
+        </h1>
+
+        <div className="content">
+          {populars.map((card) => (
+            <PopularCard key={card.id} item={card} />
+          ))}
+        </div>
       </main>
     </div>
   );

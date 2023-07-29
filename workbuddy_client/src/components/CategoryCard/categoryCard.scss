@@ -1,29 +1,61 @@
 .categoryCard {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 250px;
-  height: 320px;
-  color: #fff;
+  height: 300px;
   border-radius: 1rem;
-  padding: 1rem 0;
-  position: relative;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 0 0 -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 20px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 5px 0px inset;
 
   .title {
+    position: absolute;
+    top: 0.5rem;
+    text-align: center;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     padding: 0 0.5rem;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
   }
 
   .image {
-    height: 10rem;
-    width: 10rem;
+    position: absolute;
+    top: 1rem;
+    height: 8rem;
+    width: 8rem;
+    z-index: 999;
 
     img {
       height: 100%;
       width: 100%;
       object-fit: cover;
+      filter: drop-shadow(-5px 10px 20px rgba(0, 0, 0, 0.2));
+    }
+  }
+
+  .info {
+    position: absolute;
+    top: 10rem;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 0 0 1rem 1rem;
+    color: #fff;
+    padding-top: 1rem;
+    gap: 2rem;
+    transition: all 0.5s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+
+    &:hover {
+      height: 120px;
     }
   }
 
@@ -35,10 +67,14 @@
   }
 
   button {
-    color: #fff;
+    background-color: #fff;
     max-width: 200px;
     border: none;
     outline: none;
-    box-shadow: 0 0 5px #fff;
+  }
+
+  @media screen and (max-width: 960px) {
+    width: 200px;
+    height: 250px;
   }
 }

@@ -6,19 +6,23 @@ const CategoryCard = ({ item }) => {
   const navigate = useNavigate();
 
   return (
-    <div
-      className="categoryCard"
-      style={{
-        background: item.bgColor,
-        boxShadow: `0 2px 5px ${item.bgColor}`,
-      }}
-    >
-      <span className="title">{item.title}</span>
+    <div className="categoryCard">
       <div className="image">
         <img src={item.image} alt="image" />
       </div>
-      <span className="desc">{item.desc}</span>
-      <button onClick={() => navigate("/services?cat=design")}>Explore</button>
+      <span className="title" style={{ WebkitTextStrokeColor: item.bgColor }}>
+        {item.title}
+      </span>
+
+      <div className="info" style={{ backgroundColor: item.bgColor }}>
+        <span className="desc">{item.desc}</span>
+        <button
+          style={{ color: item.bgColor }}
+          onClick={() => navigate("/services?cat=design")}
+        >
+          Explore
+        </button>
+      </div>
     </div>
   );
 };

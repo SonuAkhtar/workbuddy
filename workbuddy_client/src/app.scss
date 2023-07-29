@@ -28,6 +28,17 @@
 main {
   width: 100%;
   max-width: var(--max-width);
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: center;
+
+    span {
+      font-size: 3rem;
+      font-weight: 500;
+    }
+  }
 }
 
 button {
@@ -44,5 +55,23 @@ button {
 
   &:hover {
     border-radius: 2rem;
+  }
+}
+
+// Responsive screens
+@media screen and (max-width: 960px) {
+  section {
+    main {
+      h1 {
+        width: 100%;
+        font-size: 1.25rem;
+        text-align: center;
+        line-height: 1.5rem;
+
+        span {
+          font-size: 2.2rem;
+        }
+      }
+    }
   }
 }

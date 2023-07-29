@@ -4,11 +4,11 @@
   flex-direction: column;
   background-color: var(--main-black-light);
   color: #fff;
-  transition: 0.5s ease all;
   position: sticky;
   top: 0;
-  z-index: 999;
-  transition: all 0.5s ease;
+  z-index: 99999;
+  transition: all 0.3s ease;
+  padding: 0 1rem;
 
   &.active {
     background-color: var(--main-white);
@@ -31,7 +31,12 @@
       font-weight: 200;
       z-index: 999;
       letter-spacing: 1px;
+      transition: all 0.3s ease;
       cursor: pointer;
+
+      &.show {
+        color: #000;
+      }
 
       .buddy {
         font-weight: 500;
@@ -45,7 +50,7 @@
         width: 5px;
         border-radius: 50%;
         background-color: var(--main-green);
-        transition: all 0.5s ease-in-out;
+        transition: all 0.3s ease-in-out;
       }
 
       .dot.loaded {
@@ -80,11 +85,12 @@
       font-weight: 300;
       font-family: "Montserrat", sans-serif;
       transition: all 0.3s ease-in-out;
-      cursor: pointer;
 
       .link {
         position: relative;
         white-space: nowrap;
+        cursor: pointer;
+        font-weight: 500;
 
         &::before {
           position: absolute;
@@ -103,11 +109,6 @@
           &::before {
             width: 100%;
           }
-        }
-
-        @media screen and (max-width: 768px) {
-          font-weight: 600;
-          font-size: 1.5rem;
         }
       }
 
@@ -145,7 +146,7 @@
           width: 100px;
           font-weight: 300;
           scale: 0;
-          transition: all 0.5s ease-in-out;
+          transition: all 0.3s ease-in-out;
           cursor: default;
           z-index: 999;
         }
@@ -174,24 +175,6 @@
           width: 100%;
         }
       }
-
-      @media screen and (max-width: 768px) {
-        position: absolute;
-        top: 0;
-        left: -2rem;
-        height: 100vh;
-        width: 100vw;
-        flex-direction: column;
-        justify-content: center;
-        gap: 3rem;
-        background-color: var(--main-white);
-        outline: 1px solid var(--main-green);
-        transform: translateX(102vh);
-
-        &.show {
-          transform: translate(0);
-        }
-      }
     }
 
     button {
@@ -205,12 +188,6 @@
 
         background-color: var(--main-green);
       }
-
-      @media screen and (max-width: 768px) {
-        width: 70%;
-        font-weight: 600;
-        font-size: 1.5rem;
-      }
     }
 
     .mobile_menu {
@@ -223,6 +200,10 @@
       justify-content: center;
       z-index: 999;
       display: none;
+
+      &.show {
+        color: #000;
+      }
 
       .burger,
       .close {
@@ -241,10 +222,6 @@
       .close.active {
         scale: 1;
       }
-
-      @media screen and (max-width: 768px) {
-        display: flex;
-      }
     }
   }
 
@@ -256,21 +233,108 @@
   }
 
   .menu {
-    width: var(--max-width);
+    width: 100%;
+    max-width: var(--max-width);
     padding: 0.75rem 0;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
     font-weight: 300;
     color: gray;
-    font-family: "Montserrat", sans-serif;
-    font-family: "Montserrat", sans-serif;
+    transition: all 0.3s ease-in-out;
 
     &.hide {
       display: none;
     }
+
+    .link {
+      width: 100%;
+      max-width: max-content;
+      position: relative;
+      cursor: pointer;
+
+      &::before {
+        position: absolute;
+        bottom: -0.25rem;
+        left: 0;
+        content: "";
+        height: 2px;
+        width: 0;
+        border-radius: 1rem;
+        background-color: var(--main-green);
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:hover,
+      &.active {
+        &::before {
+          width: 100%;
+        }
+      }
+    }
   }
 
+  // Responsive screens
   @media screen and (max-width: 768px) {
     padding: 0 2rem;
+
+    main {
+      .links {
+        position: absolute;
+        top: 0;
+        left: -2rem;
+        height: 100vh;
+        width: 100vw;
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+        background-color: var(--main-white);
+        color: #000;
+        outline: 1px solid var(--main-green);
+        scale: 0;
+
+        &.show {
+          scale: 1;
+        }
+
+        .link {
+          font-weight: 600;
+          font-size: 1.5rem;
+        }
+
+        .user .options {
+          top: 3rem;
+          width: max-content;
+
+          .link {
+            font-size: 1rem;
+            font-weight: 400;
+          }
+        }
+      }
+
+      .mobile_menu {
+        display: flex;
+      }
+    }
+
+    .button {
+      width: 70%;
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+
+    .menu {
+      display: none;
+
+      &.active {
+        display: flex;
+
+        &.hide {
+          display: flex;
+        }
+      }
+    }
   }
 }

@@ -4,21 +4,21 @@ export const category = [
     title: "UI/UX design",
     desc: "Designs that suit your business",
     image: "/images/category/uiux.png",
-    bgColor: "#395B64",
+    bgColor: "#f1b963",
   },
   {
     id: 1,
     title: "Web Apps",
     desc: "With high performance and speed",
     image: "/images/category/web.png",
-    bgColor: "#4C3575",
+    bgColor: "#e46161",
   },
   {
     id: 2,
     title: "Mobile Apps",
     desc: "Bring your ideas to execution",
     image: "/images/category/mobile.png",
-    bgColor: "#0F3460",
+    bgColor: "#7fa99b",
   },
 
   {
@@ -26,7 +26,7 @@ export const category = [
     title: "AI Images",
     desc: "Generate images are per your imagination",
     image: "/images/category/ai.png",
-    bgColor: "#9C3D54",
+    bgColor: "#a2c11c",
   },
   {
     id: 4,
@@ -38,23 +38,23 @@ export const category = [
   {
     id: 5,
     title: "Cloud Services",
-    desc: "Got all the power of cloud for your app",
+    desc: "Get all the power of cloud for your app",
     image: "/images/category/cloud.png",
-    bgColor: "#1B2430",
+    bgColor: "#00aaa0",
   },
   {
     id: 6,
     title: "Graphics Design",
     desc: "Make your brand look appealing and modern",
     image: "/images/category/graphics.png",
-    bgColor: "#1E5128",
+    bgColor: "#ec729c",
   },
   {
     id: 7,
     title: "Animations",
     desc: "Got bored of still images, try something moving",
     image: "/images/category/animation.png",
-    bgColor: "#2E8A99",
+    bgColor: "#facf5a",
   },
 ];
 

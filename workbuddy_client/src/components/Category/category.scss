@@ -1,4 +1,4 @@
-.popular {
+.category {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -9,33 +9,25 @@
 
   main {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    gap: 5rem;
+    gap: 1rem;
 
     h1 {
-      margin-bottom: 1rem;
-
       span {
         margin: 0 0.5rem;
       }
     }
 
     .content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      column-gap: 3rem;
-      row-gap: 6rem;
-    }
-
-    // Responsive screens
-    @media screen and (max-width: 960px) {
-      .content {
+      .slick-slide {
+        display: flex;
+        align-items: center;
         justify-content: center;
-        row-gap: 5rem;
       }
     }
+  }
+
+  // Responsive screens
+  @media screen and (max-width: 960px) {
   }
 }

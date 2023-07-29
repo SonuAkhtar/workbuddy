@@ -1,9 +1,15 @@
 import React from "react";
-import { Slider } from "infinite-react-carousel";
-import createRequest from "../../utils/createRequest";
+// Libraries
 import { useQuery } from "@tanstack/react-query";
 import { Link, useParams } from "react-router-dom";
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import createRequest from "../../utils/createRequest";
 import Reviews from "../../components/Reviews/Reviews";
+
 import "./service.scss";
 
 const Service = () => {
@@ -70,7 +76,7 @@ const Service = () => {
               </div>
             )}
 
-            <Slider slidesToShow={1} arrowScroll={1} className="slider">
+            <Slider slidesToShow={1} slidesToScroll={1} className="slider">
               {data.images.map((image) => (
                 <img key={image} src={image} alt="slide-img" />
               ))}
