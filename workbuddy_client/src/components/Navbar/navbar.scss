@@ -292,6 +292,7 @@
         background-color: var(--main-white);
         color: #000;
         outline: 1px solid var(--main-green);
+        transform-origin: 100% 0%;
         scale: 0;
 
         &.show {
