@@ -18,7 +18,7 @@ const CategoryCard = ({ item }) => {
         <span className="desc">{item.desc}</span>
         <button
           style={{ color: item.bgColor }}
-          onClick={() => navigate("/services?cat=design")}
+          onClick={() => navigate(`/services?search=${item.search}`)}
         >
           Explore
         </button>
