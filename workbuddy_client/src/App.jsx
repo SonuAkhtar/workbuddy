@@ -49,11 +49,11 @@ function App() {
           element: <ServiceAdd />,
         },
         {
-          path: "/Services",
+          path: "/services",
           element: <Services />,
         },
         {
-          path: "/Service/:id",
+          path: "/service/:id",
           element: <Service />,
         },
         {
