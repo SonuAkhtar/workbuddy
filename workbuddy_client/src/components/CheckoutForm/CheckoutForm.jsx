@@ -54,7 +54,7 @@ const CheckoutForm = () => {
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: "https://workbuddy-flame.vercel.app//success",
+        return_url: "https://workbuddy-flame.vercel.app/success",
       },
     });
 

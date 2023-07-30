@@ -45,10 +45,11 @@ function Register() {
   return (
     <section className="register">
       <main>
+        <h1>Create a New Account</h1>
+
         <form onSubmit={handleSubmit}>
           <div className="form_main">
             <div className="left">
-              <h1>Create a new account</h1>
               <input
                 name="username"
                 type="text"
