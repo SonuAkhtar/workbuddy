@@ -53,7 +53,7 @@ const Orders = () => {
                 <th>Contact</th>
               </tr>
             </thead>
-            {console.log(data)}
+
             <tbody>
               {data.map((order) => (
                 <tr key={order._id}>
