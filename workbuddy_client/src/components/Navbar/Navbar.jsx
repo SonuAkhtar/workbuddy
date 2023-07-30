@@ -30,6 +30,8 @@ const Navbar = () => {
   };
 
   const handleLogout = async () => {
+    setShowUserMenu(false);
+
     try {
       await createRequest.post("auth/logout");
       localStorage.removeItem("currentUser");
@@ -90,7 +92,7 @@ const Navbar = () => {
               />
               <span>{currentUser?.username}</span>
               <i
-                class="fa-solid fa-angle-down"
+                className="fa-solid fa-angle-down"
                 onClick={() => setShowUserMenu(!showUserMenu)}
               ></i>
               <div className={`options ${showUserMenu ? "open" : ""}`}>

@@ -14,6 +14,8 @@ import orderRoute from "./routes/order.route.js";
 import reviewRoute from "./routes/review.route.js";
 import userRoute from "./routes/user.route.js";
 
+const PORT = process.env.PORT || 8800;
+
 const app = express();
 dotenv.config();
 mongoose.set("strictQuery", true);
@@ -47,7 +49,7 @@ app.use((err, req, res, next) => {
   return res.status(errorStatus).send(errorMessage);
 });
 
-app.listen(8800, () => {
+app.listen(PORT, () => {
   connect();
   console.log("backend");
 });

@@ -65,7 +65,7 @@ const MyServices = () => {
                   <td>{service.sales}</td>
                   <td>
                     <i
-                      class="fa-solid fa-trash"
+                      className="fa-solid fa-trash"
                       onClick={() => handleDelete(service._id)}
                     ></i>
                   </td>

@@ -64,7 +64,7 @@ const Orders = () => {
                   <td>{order.price}</td>
                   <td>
                     <i
-                      class="fa-regular fa-message"
+                      className="fa-regular fa-message"
                       onClick={() => handleContact(order)}
                     ></i>
                   </td>
