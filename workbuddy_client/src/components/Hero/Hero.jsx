@@ -14,9 +14,11 @@ const Hero = () => {
     <section className="hero">
       <main>
         <div className="left">
-          <h1>
-            Get the best <span>Freelancers</span> for your business.
-          </h1>
+          <div className="header">
+            <span>Get the best</span>
+            <h1>Freelancers</h1>
+            <span>for your business.</span>
+          </div>
           <div className="search">
             <div className="searchInput">
               <i className="fa-solid fa-magnifying-glass"></i>

@@ -74,7 +74,23 @@
   }
 
   @media screen and (max-width: 960px) {
-    width: 200px;
-    height: 250px;
+    width: 220px;
+    height: 275px;
+    overflow: hidden;
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .info {
+      top: 9rem;
+      height: 100%;
+      padding-top: 0.5rem;
+      gap: 1rem;
+    }
+
+    button {
+      max-width: 150px;
+    }
   }
 }

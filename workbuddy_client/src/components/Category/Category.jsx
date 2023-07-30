@@ -51,9 +51,11 @@ const Category = () => {
   return (
     <div className="category">
       <main>
-        <h1>
-          Explore the<span>Latest Category</span>as per your need
-        </h1>
+        <div className="header">
+          <span>Explore the</span>
+          <h1>Latest Category</h1>
+          <span>as per your need</span>
+        </div>
 
         <div className="content">
           <Slider {...settings}>

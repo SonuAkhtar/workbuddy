@@ -5,9 +5,11 @@ const Business = () => {
   return (
     <div className="business">
       <main>
-        <h1>
-          Well designed<span>Business Solution</span>for every team
-        </h1>
+        <div className="header">
+          <span>Well designed</span>
+          <h1>Business Solution</h1>
+          <span>for every team</span>
+        </div>
 
         <div className="content">
           <div className="left">

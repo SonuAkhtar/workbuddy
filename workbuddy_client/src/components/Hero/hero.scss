@@ -16,12 +16,10 @@
       gap: 2rem;
       z-index: 99;
 
-      h1 {
-        span {
-          color: transparent;
-          -webkit-text-stroke-width: 1px;
-          -webkit-text-stroke-color: var(--main-white);
-        }
+      .header h1 {
+        color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: var(--main-white);
       }
 
       .search {
@@ -102,11 +100,9 @@
 
   // Responsive screens
   @media screen and (max-width: 960px) {
-    height: 60vh;
+    height: 55vh;
 
     main {
-      justify-content: center;
-
       .right {
         position: absolute;
         width: 50%;
@@ -118,7 +114,7 @@
   @media screen and (max-width: 768px) {
     main {
       .left {
-        width: 95%;
+        width: 100%;
 
         .search {
           button {
@@ -129,6 +125,8 @@
 
         .frequent {
           flex-wrap: wrap;
+          width: 100%;
+          column-gap: 0.5rem;
 
           span {
             width: 100%;

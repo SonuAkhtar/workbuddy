@@ -7,9 +7,11 @@ const Popular = () => {
   return (
     <div className="popular">
       <main>
-        <h1>
-          Meet our<span>Popular Experts</span>across the tech
-        </h1>
+        <div className="header">
+          <span>Meet our</span>
+          <h1>Popular Experts</h1>
+          <span>across the tech</span>
+        </div>
 
         <div className="content">
           {populars.map((card) => (

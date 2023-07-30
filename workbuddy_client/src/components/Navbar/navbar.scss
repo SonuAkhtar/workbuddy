@@ -232,7 +232,7 @@
     z-index: 99;
   }
 
-  .menu {
+  .bottomMenu {
     width: 100%;
     max-width: var(--max-width);
     padding: 0.75rem 0;
@@ -241,7 +241,7 @@
     flex-wrap: wrap;
     gap: 1rem;
     font-weight: 300;
-    color: gray;
+    color: var(--main-gray-light);
     transition: all 0.3s ease-in-out;
 
     &.hide {
@@ -314,13 +314,15 @@
       }
     }
 
-    .button {
-      width: 70%;
+    button {
+      background-color: var(--main-green);
+      color: #fff;
+      width: 250px;
       font-weight: 600;
       font-size: 1.5rem;
     }
 
-    .menu {
+    .bottomMenu {
       display: none;
 
       &.active {

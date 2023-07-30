@@ -8,7 +8,9 @@ const PopularCard = ({ item }) => {
   return (
     <div className="popularCard">
       <div className="shape" style={{ background: item.bgColor }}></div>
-      <img src={item.image} alt="image" />
+      <div className="image">
+        <img src={item.image} alt="image" />
+      </div>
       <div className="info">
         <h2>{item.username}</h2>
         <p>{item.cat}</p>

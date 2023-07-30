@@ -52,6 +52,11 @@ const Navbar = () => {
     navigate(path);
   };
 
+  const handleBurgerIconClick = () => {
+    setBurgerMenu(!burgerMenu);
+    setNavActive(!navActive);
+  };
+
   return (
     <div className={navActive || pathname !== "/" ? "navbar active" : "navbar"}>
       <main>
@@ -149,7 +154,7 @@ const Navbar = () => {
 
         <div
           className={`mobile_menu ${burgerMenu && "show"}`}
-          onClick={() => setBurgerMenu(!burgerMenu)}
+          onClick={handleBurgerIconClick}
         >
           <span className={`burger ${burgerMenu ? "" : "active"}`}>
             <i className="fa-solid fa-bars"></i>
@@ -163,7 +168,7 @@ const Navbar = () => {
         <>
           {pathname !== "/login" && pathname !== "/register" && <hr />}
           <div
-            className={`menu ${burgerMenu ? "active" : ""} ${
+            className={`bottomMenu ${burgerMenu ? "active" : ""} ${
               pathname === "/login" || pathname === "/register" ? "hide" : ""
             }`}
           >

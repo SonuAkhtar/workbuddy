@@ -5,9 +5,11 @@ const Features = () => {
   return (
     <div className="features">
       <main>
-        <h1>
-          The whole <span>Freelance World's</span> talent at your fingertips.
-        </h1>
+        <div className="header">
+          <span>The whole</span>
+          <h1>Freelance World's</h1>
+          <span>talent at your fingertips.</span>
+        </div>
 
         <div className="content">
           <div className="left">
@@ -42,12 +44,7 @@ const Features = () => {
           </div>
           <div className="right">
             <div className="video">
-              <video
-                src="/images/homepage-video.mp4"
-                controls
-                autoPlay
-                loop
-              ></video>
+              <video src="/images/homepage-video.mp4" controls loop></video>
             </div>
           </div>
         </div>
