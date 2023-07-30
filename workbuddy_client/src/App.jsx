@@ -14,12 +14,12 @@ import Messages from "./pages/Messages/Messages";
 import MyServices from "./pages/MyServices/MyServices";
 import Orders from "./pages/Orders/Orders";
 import Register from "./pages/Register/Register";
+import Success from "./pages/Success/Success";
+import Pay from "./pages/Pay/Pay";
 
 //Components
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import Success from "./pages/Success/Success";
-import Pay from "./pages/Pay/Pay";
 
 function App() {
   const queryClient = new QueryClient();
@@ -35,6 +35,7 @@ function App() {
       </div>
     );
   };
+
   const router = createBrowserRouter([
     {
       path: "/",
