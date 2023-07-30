@@ -29,20 +29,18 @@ const connect = async () => {
   }
 };
 
-app.use(
-  cors({ origin: "https://workbuddy-flame.vercel.app", credentials: true })
-);
+app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
 // use routes
-app.use("/api/auth", authRoute);
-app.use("/api/conversations", conversationRoute);
-app.use("/api/services", serviceRoute);
-app.use("/api/messages", messageRoute);
-app.use("/api/orders", orderRoute);
-app.use("/api/reviews", reviewRoute);
-app.use("/api/users", userRoute);
+app.use("/auth", authRoute);
+app.use("/conversations", conversationRoute);
+app.use("/services", serviceRoute);
+app.use("/messages", messageRoute);
+app.use("/orders", orderRoute);
+app.use("/reviews", reviewRoute);
+app.use("/users", userRoute);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
