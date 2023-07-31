@@ -7,7 +7,18 @@ const Hero = () => {
   const navigate = useNavigate();
 
   const handleSeaerch = () => {
-    navigate(`/services?search=${input}`);
+    let searchVal = "";
+
+    if (input.includes("mobile")) searchVal = "mobile";
+    else if (input.includes("web")) searchVal = "web";
+    else if (input.includes("ui")) searchVal = "uiux";
+    else if (input.includes("ai")) searchVal = "ai";
+    else if (input.includes("animation")) searchVal = "animation";
+    else if (input.includes("graphic")) searchVal = "graphic";
+    else if (input.includes("music")) searchVal = "music";
+    else if (input.includes("cloud")) searchVal = "cloud";
+
+    navigate(`/services?search=${searchVal}`);
   };
 
   return (

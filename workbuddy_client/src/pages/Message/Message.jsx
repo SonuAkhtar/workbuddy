@@ -2,10 +2,11 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import createRequest from "../../utils/createRequest";
+import getCurrentUser from "../../utils/getCurrentUser";
 import "./message.scss";
 
 const Message = () => {
-  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const currentUser = getCurrentUser();
   const { id } = useParams();
   const queryClient = useQueryClient();
 
@@ -52,7 +53,7 @@ const Message = () => {
             {data.map((item) => (
               <div
                 className={
-                  item.userId === currentUser._id ? "owner item" : "item"
+                  item.userId === currentUser?._id ? "owner item" : "item"
                 }
                 key={item._id}
               >

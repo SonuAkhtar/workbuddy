@@ -3,7 +3,7 @@ import "./business.scss";
 
 const Business = () => {
   return (
-    <div className="business">
+    <div id="business" className="business">
       <main>
         <div className="header">
           <span>Well designed</span>

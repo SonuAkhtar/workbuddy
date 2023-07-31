@@ -5,7 +5,7 @@ import "./popular.scss";
 
 const Popular = () => {
   return (
-    <div className="popular">
+    <div id="popular" className="popular">
       <main>
         <div className="header">
           <span>Meet our</span>

@@ -2,10 +2,11 @@ import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import createRequest from "../../utils/createRequest";
 import { useNavigate } from "react-router-dom";
+import getCurrentUser from "../../utils/getCurrentUser";
 import "./orders.scss";
 
 const Orders = () => {
-  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const currentUser = getCurrentUser();
   const navigate = useNavigate();
 
   const { isLoading, error, data } = useQuery({

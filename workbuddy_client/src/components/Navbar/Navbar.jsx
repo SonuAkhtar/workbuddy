@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import createRequest from "../../utils/createRequest";
+import getCurrentUser from "../../utils/getCurrentUser";
 import "./navbar.scss";
 
 const Navbar = () => {
@@ -11,7 +12,7 @@ const Navbar = () => {
 
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const currentUser = getCurrentUser();
 
   useEffect(() => {
     window.addEventListener("scroll", isActive);
@@ -34,6 +35,7 @@ const Navbar = () => {
 
     try {
       await createRequest.post("auth/logout");
+
       localStorage.removeItem("currentUser");
       navigate("/login");
     } catch (error) {
@@ -69,18 +71,28 @@ const Navbar = () => {
           </span>
         </div>
         <div className={`links ${burgerMenu && "show"}`}>
-          <span
-            onClick={() => handleNavClick("/")}
-            className={`link ${pathname === "/business" && "active"}`}
-          >
-            Business
-          </span>
-          <span
-            onClick={() => handleNavClick("/")}
+          <a
+            href="#category"
+            onClick={() => setBurgerMenu(false)}
             className={`link ${pathname === "/categories" && "active"}`}
           >
             Categories
-          </span>
+          </a>
+          <a
+            href="#popular"
+            onClick={() => setBurgerMenu(false)}
+            className={`link ${pathname === "/categories" && "active"}`}
+          >
+            Experts
+          </a>
+          <a
+            href="#business"
+            onClick={() => setBurgerMenu(false)}
+            className={`link ${pathname === "/business" && "active"}`}
+          >
+            Business
+          </a>
+
           {!currentUser?.isSeller && (
             <span
               onClick={() => handleNavClick("/")}
@@ -92,7 +104,7 @@ const Navbar = () => {
           {currentUser ? (
             <div className="user">
               <img
-                src={currentUser.img || "/images/noavatar.jpg"}
+                src={currentUser?.img || "/images/noavatar.jpg"}
                 alt="user-image"
               />
               <span>{currentUser?.username}</span>

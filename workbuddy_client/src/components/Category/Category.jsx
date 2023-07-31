@@ -49,7 +49,7 @@ const Category = () => {
   };
 
   return (
-    <div className="category">
+    <div id="category" className="category">
       <main>
         <div className="header">
           <span>Explore the</span>

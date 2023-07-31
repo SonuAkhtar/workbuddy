@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import createRequest from "../../utils/createRequest";
+import getCurrentUser from "../../utils/getCurrentUser";
 import moment from "moment";
 import "./messages.scss";
 
 const Messages = () => {
-  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const currentUser = getCurrentUser();
   const queryClient = useQueryClient();
 
   const { isLoading, error, data } = useQuery({
@@ -53,13 +54,15 @@ const Messages = () => {
                 <tr
                   key={conv.id}
                   className={
-                    (currentUser.isSeller && !conv.readBySeller) ||
-                    (!currentUser.isSeller && !conv.readByBuyer)
+                    (currentUser?.isSeller && !conv.readBySeller) ||
+                    (!currentUser?.isSeller && !conv.readByBuyer)
                       ? "active"
                       : ""
                   }
                 >
-                  <td>{currentUser.isSeller ? conv.buyerId : conv.sellerId}</td>
+                  <td>
+                    {currentUser?.isSeller ? conv.buyerId : conv.sellerId}
+                  </td>
                   <td>
                     <Link to={`/message/${conv.id}`} className="link">
                       {conv?.lastMessage?.substring(0, 100)}...
@@ -67,8 +70,8 @@ const Messages = () => {
                   </td>
                   <td>{moment(conv.updatedAt).fromNow()}</td>
                   <td>
-                    {((currentUser.isSeller && !conv.readBySeller) ||
-                      (!currentUser.isSeller && !conv.readByBuyer)) && (
+                    {((currentUser?.isSeller && !conv.readBySeller) ||
+                      (!currentUser?.isSeller && !conv.readByBuyer)) && (
                       <button onClick={() => handleMsgRead(conv.id)}>
                         Mark as read
                       </button>
