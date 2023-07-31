@@ -1,5 +1,8 @@
+import getCurrentUser from "../utils/getCurrentUser";
+const currentUser = getCurrentUser();
+
 export const INITIAL_STATE = {
-  userId: JSON.parse(localStorage.getItem("currentUser"))?.info._id,
+  userId: currentUser?.info?._id,
   title: "",
   category: "design",
   coverImage: "",
