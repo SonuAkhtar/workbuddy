@@ -206,7 +206,6 @@ const Navbar = () => {
               Digital Marketing
             </Link>
           </div>
-          <hr />
         </>
       )}
     </div>
