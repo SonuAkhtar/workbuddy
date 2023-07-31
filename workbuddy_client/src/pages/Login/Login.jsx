@@ -27,7 +27,9 @@ function Login() {
         username,
         password,
       });
+
       localStorage.setItem("currentUser", JSON.stringify(res.data));
+      document.cookie = `accessToken = ${res.data.token}`;
       navigate("/");
     } catch (error) {
       setError(error.response.data);
