@@ -31,7 +31,7 @@ const connect = async () => {
 
 app.use(
   cors({
-    origin: "https://workbuddy-flame.vercel.app/",
+    origin: "*",
     methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
     credentials: true,
     optionsSuccessStatus: 200,
