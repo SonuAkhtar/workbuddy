@@ -29,48 +29,26 @@ const connect = async () => {
   }
 };
 
-if (process.env.NODE_ENV === "production") {
-  const path = require("path");
-
-  app.use(
-    express.static(
-      path.resolve(__dirname, "workbuddy_backend", "workbuddy_client/dist")
-    )
-  );
-  app.get("*", (req, res) => {
-    res.sendFile(
-      path.resolve(
-        __dirname,
-        "workbuddy_backend",
-        "workbuddy_client/dist",
-        "index.html"
-      ),
-      function (err) {
-        if (err) {
-          res.status(500).send(err);
-        }
-      }
-    );
-  });
-}
-
-const corsOptions = {
-  origin: "https://workbuddy-flame.vercel.app",
-  credentials: true,
-  optionsSuccessStatus: 200,
-};
+app.use(
+  cors({
+    origin: "https://workbuddy-flame.vercel.app/",
+    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+    credentials: true,
+    optionsSuccessStatus: 200,
+  })
+);
 
 app.use(express.json());
 app.use(cookieParser());
 
 // use routes
-app.use("/auth", cors(corsOptions), authRoute);
-app.use("/conversations", cors(corsOptions), conversationRoute);
-app.use("/services", cors(corsOptions), serviceRoute);
-app.use("/messages", cors(corsOptions), messageRoute);
-app.use("/orders", cors(corsOptions), orderRoute);
-app.use("/reviews", cors(corsOptions), reviewRoute);
-app.use("/users", cors(corsOptions), userRoute);
+app.use("/auth", authRoute);
+app.use("/conversations", conversationRoute);
+app.use("/services", serviceRoute);
+app.use("/messages", messageRoute);
+app.use("/orders", orderRoute);
+app.use("/reviews", reviewRoute);
+app.use("/users", userRoute);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
