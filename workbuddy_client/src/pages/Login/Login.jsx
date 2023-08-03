@@ -42,7 +42,7 @@ function Login() {
           <form onSubmit={handleSubmit}>
             <h1>Welcome Back</h1>
             <h3>Login to your account & let's get started</h3>
-            <span className="error">{error && error}</span>
+
             <span className={`input_error ${usernameError && "show"}`}>
               Please enter your username
             </span>
