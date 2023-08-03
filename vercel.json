@@ -3,7 +3,7 @@
   "builds": [
     {
       "src": "./workbuddy_backend/index.js",
-      "user": "@vercel/node"
+      "use": "@vercel/node"
     }
   ],
   "routes": [{ "src": "/workbuddy_client/(.*)", "dest": "/", "status": 200 }]
