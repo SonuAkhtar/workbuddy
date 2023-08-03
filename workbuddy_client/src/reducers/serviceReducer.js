@@ -2,7 +2,7 @@ import getCurrentUser from "../utils/getCurrentUser";
 const currentUser = getCurrentUser();
 
 export const INITIAL_STATE = {
-  userId: currentUser?.info?._id,
+  userId: currentUser?._id,
   title: "",
   category: "design",
   coverImage: "",
