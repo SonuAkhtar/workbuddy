@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "builds": [
+    {
+      "src": "./workbuddy_backend/index.js",
+      "user": "@vercel/node"
+    }
+  ],
+  "routes": [{ "src": "/workbuddy_client/(.*)", "dest": "/", "status": 200 }]
+}

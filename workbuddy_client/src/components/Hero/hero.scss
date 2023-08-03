@@ -16,10 +16,20 @@
       gap: 2rem;
       z-index: 99;
 
-      .header h1 {
-        color: transparent;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: var(--main-white);
+      .heroTitle {
+        h1 {
+          font-size: 1.5rem;
+          font-weight: 300;
+
+          span {
+            font-size: 3rem;
+            font-weight: 500;
+            margin: 0 0.25rem;
+            color: transparent;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: var(--main-white);
+          }
+        }
       }
 
       .search {
@@ -103,6 +113,22 @@
     height: 55vh;
 
     main {
+      .left {
+        height: 100%;
+        padding-top: 2rem;
+
+        .heroTitle {
+          h1 {
+            font-size: 1.25rem;
+            text-align: center;
+
+            span {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+
       .right {
         position: absolute;
         width: 50%;
@@ -115,6 +141,10 @@
     main {
       .left {
         width: 100%;
+
+        .heroTitle {
+          margin-bottom: 6rem;
+        }
 
         .search {
           button {
@@ -134,7 +164,7 @@
 
           button {
             padding: 0.5rem;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
           }
         }
       }

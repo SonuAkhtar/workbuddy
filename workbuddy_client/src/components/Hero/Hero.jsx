@@ -25,10 +25,12 @@ const Hero = () => {
     <section className="hero">
       <main>
         <div className="left">
-          <div className="header">
-            <span>Get the best</span>
-            <h1>Freelancers</h1>
-            <span>for your business.</span>
+          <div className="heroTitle">
+            <h1>
+              Get the best
+              <span>Freelancers</span>
+              for your business.
+            </h1>
           </div>
           <div className="search">
             <div className="searchInput">
