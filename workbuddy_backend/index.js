@@ -29,24 +29,23 @@ const connect = async () => {
   }
 };
 
-app.use(
-  cors({
-    origin: "https://workbuddy-flame.vercel.app",
-    credentials: true,
-    exposedHeaders: ["Set-cookie"],
-  })
-);
+const corsOptions = {
+  origin: "https://workbuddy-flame.vercel.app",
+  credentials: true,
+  optionsSuccessStatus: 200,
+};
+
 app.use(express.json());
 app.use(cookieParser());
 
 // use routes
-app.use("/auth", authRoute);
-app.use("/conversations", conversationRoute);
-app.use("/services", serviceRoute);
-app.use("/messages", messageRoute);
-app.use("/orders", orderRoute);
-app.use("/reviews", reviewRoute);
-app.use("/users", userRoute);
+app.use("/auth", cors(corsOptions), authRoute);
+app.use("/conversations", cors(corsOptions), conversationRoute);
+app.use("/services", cors(corsOptions), serviceRoute);
+app.use("/messages", cors(corsOptions), messageRoute);
+app.use("/orders", cors(corsOptions), orderRoute);
+app.use("/reviews", cors(corsOptions), reviewRoute);
+app.use("/users", cors(corsOptions), userRoute);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
