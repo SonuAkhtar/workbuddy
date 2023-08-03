@@ -29,6 +29,21 @@ const connect = async () => {
   }
 };
 
+if (process.env.NODE_ENV === "production") {
+  const path = require("path");
+  app.use(express.static(path.resolve(__dirname, "workbuddy_client", "build")));
+  app.get("*", (req, res) => {
+    res.sendFile(
+      path.resolve(__dirname, "workbuddy_client", "build", "index.html"),
+      function (err) {
+        if (err) {
+          res.status(500).send(err);
+        }
+      }
+    );
+  });
+}
+
 const corsOptions = {
   origin: "https://workbuddy-flame.vercel.app",
   credentials: true,
