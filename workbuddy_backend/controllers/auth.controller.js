@@ -6,20 +6,6 @@ import showError from "../utils/showError.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-// Method: New user register
-export const register = async (req, res, next) => {
-  try {
-    const hash = bcrypt.hashSync(req.body.password, 5);
-
-    const newUser = new User({ ...req.body, password: hash });
-
-    await newUser.save();
-    res.status(201).send("User has been created.");
-  } catch (error) {
-    next(error);
-  }
-};
-
 // Method: Existing user login
 export const login = async (req, res, next) => {
   try {
@@ -53,4 +39,18 @@ export const logout = async (req, res) => {
     .clearCookie("accessToken", { sameSite: "none", secure: true })
     .status(200)
     .send("User has been logged out.");
+};
+
+// Method: New user register
+export const register = async (req, res, next) => {
+  try {
+    const hash = bcrypt.hashSync(req.body.password, 5);
+
+    const newUser = new User({ ...req.body, password: hash });
+
+    await newUser.save();
+    res.status(201).send("User has been created.");
+  } catch (error) {
+    next(error);
+  }
 };

@@ -23,7 +23,7 @@ mongoose.set("strictQuery", true);
 const connect = async () => {
   try {
     await mongoose.connect(process.env.MONGO);
-    console.log("connected to MongoDB");
+    console.log("MongoDB Connected");
   } catch (error) {
     console.log(error);
   }
@@ -32,17 +32,16 @@ const connect = async () => {
 app.use(
   cors({ origin: "https://workbuddy-flame.vercel.app", credentials: true })
 );
-
 app.use(express.json());
 app.use(cookieParser());
 
 // use routes
 app.use("/auth", authRoute);
 app.use("/conversations", conversationRoute);
-app.use("/services", serviceRoute);
 app.use("/messages", messageRoute);
 app.use("/orders", orderRoute);
 app.use("/reviews", reviewRoute);
+app.use("/services", serviceRoute);
 app.use("/users", userRoute);
 
 app.use((err, req, res, next) => {
@@ -54,5 +53,5 @@ app.use((err, req, res, next) => {
 
 app.listen(PORT, () => {
   connect();
-  console.log("Listening to backend");
+  console.log("Backend Running");
 });
