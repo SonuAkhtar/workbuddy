@@ -31,7 +31,11 @@ const Reviews = ({ serviceId }) => {
     let desc = e.target[0].value;
     let star = e.target[1].value;
 
-    mutation.mutate({ serviceId, desc, star });
+    try {
+      mutation.mutate({ serviceId, desc, star });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
