@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const createRequest = axios.create({
-  baseURL: "https://workbuddy-api.vercel.app/",
+  baseURL: "https://workbuddy-zmfs.onrender.com/",
   withCredentials: true,
 });
 
