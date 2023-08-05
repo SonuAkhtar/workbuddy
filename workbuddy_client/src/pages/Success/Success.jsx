@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import createRequest from "../../utils/createRequest";
+import "./success.scss";
 
 const Success = () => {
   const navigate = useNavigate();
@@ -24,7 +25,10 @@ const Success = () => {
   }, []);
 
   return (
-    <div>
+    <div className="success">
+      <span>
+        <i className="fa-solid fa-check"></i>
+      </span>
       Payment successful. You are being redirected to the orders page. Please do
       not close the page
     </div>

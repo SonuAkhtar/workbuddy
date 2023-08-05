@@ -58,7 +58,7 @@ const MyServices = () => {
               {data.map((service) => (
                 <tr key={service._id}>
                   <td>
-                    <img className="img" src={service.cover} alt="img" />
+                    <img className="img" src={service.coverImage} alt="img" />
                   </td>
                   <td>{service.title}</td>
                   <td>{service.price}</td>

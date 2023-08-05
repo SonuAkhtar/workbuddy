@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
+// Libraries
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import createRequest from "../../utils/createRequest";
-import { useParams } from "react-router-dom";
 import CheckoutForm from "../../components/CheckoutForm/CheckoutForm";
 import "./pay.scss";
 
@@ -39,11 +41,13 @@ const Pay = () => {
 
   return (
     <div className="pay">
-      {clientSecret && (
-        <Elements options={options} stripe={stripePromise}>
-          <CheckoutForm />
-        </Elements>
-      )}
+      <main>
+        {clientSecret && (
+          <Elements options={options} stripe={stripePromise}>
+            <CheckoutForm />
+          </Elements>
+        )}
+      </main>
     </div>
   );
 };

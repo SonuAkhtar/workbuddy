@@ -18,7 +18,7 @@ const Hero = () => {
     else if (input.includes("music")) searchVal = "music";
     else if (input.includes("cloud")) searchVal = "cloud";
 
-    navigate(`/services?search=${searchVal}`);
+    navigate(`/services?category=${searchVal}`);
   };
 
   return (
@@ -45,13 +45,13 @@ const Hero = () => {
           </div>
           <div className="frequent">
             <span>Frequent Searched:</span>
-            <button onClick={() => navigate("/services?search=uiux")}>
+            <button onClick={() => navigate("/services?category=uiux")}>
               UI/UX Design
             </button>
-            <button onClick={() => navigate("/services?search=web")}>
+            <button onClick={() => navigate("/services?category=web")}>
               Web Development
             </button>
-            <button onClick={() => navigate("/services?search=ai")}>
+            <button onClick={() => navigate("/services?category=ai")}>
               AI Services
             </button>
           </div>

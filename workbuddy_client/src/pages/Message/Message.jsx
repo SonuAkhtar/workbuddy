@@ -41,7 +41,7 @@ const Message = () => {
     <section className="message">
       <main>
         <span className="breadcrumbs">
-          <Link to="/messages">MESSAGES</Link> - John Cena
+          <Link to="/messages">MESSAGES</Link>
         </span>
 
         {isLoading ? (

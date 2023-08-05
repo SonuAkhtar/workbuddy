@@ -78,7 +78,7 @@ function Login() {
           </form>
         </div>
         <div className="right">
-          <img src="/images/login-image.jpg" alt="login-image" />
+          <img src="/images/login-image.png" alt="login-image" />
         </div>
       </main>
     </section>

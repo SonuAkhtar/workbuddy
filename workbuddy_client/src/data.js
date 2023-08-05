@@ -105,7 +105,7 @@ export const services = [
     desc: "service desc",
     price: 112,
     star: 5,
-    username: "john cena",
+    username: "john Mcnail",
   },
   {
     id: 1,
@@ -114,7 +114,7 @@ export const services = [
     desc: "service desc",
     price: 112,
     star: 5,
-    username: "john cena",
+    username: "Benjamin",
   },
   {
     id: 2,
@@ -123,7 +123,7 @@ export const services = [
     desc: "service desc",
     price: 112,
     star: 5,
-    username: "john cena",
+    username: "Michael",
   },
   {
     id: 3,
@@ -132,7 +132,7 @@ export const services = [
     desc: "service desc",
     price: 112,
     star: 5,
-    username: "john cena",
+    username: "David Lato",
   },
   {
     id: 4,
@@ -141,7 +141,7 @@ export const services = [
     desc: "service desc",
     price: 112,
     star: 5,
-    username: "john cena",
+    username: "Robert Downey",
   },
   {
     id: 5,
@@ -150,7 +150,7 @@ export const services = [
     desc: "service desc",
     price: 112,
     star: 5,
-    username: "john cena",
+    username: "James Karley",
   },
   {
     id: 6,
@@ -159,7 +159,7 @@ export const services = [
     desc: "service desc",
     price: 112,
     star: 5,
-    username: "john cena",
+    username: "Lea Patty",
   },
   {
     id: 7,
@@ -168,6 +168,6 @@ export const services = [
     desc: "service desc",
     price: 112,
     star: 5,
-    username: "john cena",
+    username: "Nicolas",
   },
 ];

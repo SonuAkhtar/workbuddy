@@ -45,16 +45,24 @@ const Reviews = ({ serviceId }) => {
       <hr />
 
       <div className="add">
-        <h3>Add a Review</h3>
         <form onSubmit={handleReview}>
-          <input type="text" placeholder="Write your review" />
-          <select name="" id="">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
+          <div className="content">
+            <div className="reviewComment">
+              <label>Add a Review</label>
+              <input type="text" placeholder="Write your review" />
+            </div>
+
+            <div className="reviewRating">
+              <label>Rating</label>
+              <select name="" id="">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+          </div>
           <button type="submit">Submit</button>
         </form>
       </div>

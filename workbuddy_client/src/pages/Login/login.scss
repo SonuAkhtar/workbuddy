@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem 0;
 
   main {
     display: flex;
@@ -62,10 +63,6 @@
             border-color: var(--main-green);
             box-shadow: 0 1px 10px var(--main-gray-light);
           }
-
-          @media screen and (max-width: 960px) {
-            max-width: 80%;
-          }
         }
 
         .rememer {
@@ -82,10 +79,6 @@
           input {
             width: max-content;
             cursor: pointer;
-          }
-
-          @media screen and (max-width: 960px) {
-            max-width: calc(80% + 2rem);
           }
         }
 
@@ -111,10 +104,6 @@
             background-color: var(--main-green);
             cursor: pointer;
           }
-
-          @media screen and (max-width: 960px) {
-            max-width: calc(80% + 2rem);
-          }
         }
 
         span.error {
@@ -134,10 +123,6 @@
           }
         }
       }
-
-      @media screen and (max-width: 768px) {
-        width: 100%;
-      }
     }
 
     .right {
@@ -147,15 +132,45 @@
         height: 100%;
         width: 100%;
         object-fit: cover;
+        filter: drop-shadow(-5px 10px 20px rgba(0, 0, 0, 0.2));
       }
     }
+  }
 
-    @media screen and (max-width: 960px) {
-      margin-top: 3rem;
+  // Responsive screens
+  @media screen and (max-width: 960px) {
+    main {
+      .left {
+        form {
+          h3 {
+            margin-bottom: 1rem;
+          }
+
+          input {
+            max-width: 80%;
+          }
+
+          .rememer {
+            max-width: calc(80% + 2rem);
+          }
+
+          button {
+            max-width: calc(80% + 2rem);
+          }
+        }
+      }
     }
+  }
 
-    @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
+    padding-bottom: 0;
+
+    main {
       flex-direction: column;
+
+      .left {
+        width: 100%;
+      }
     }
   }
 }

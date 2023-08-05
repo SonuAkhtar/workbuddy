@@ -1,12 +1,12 @@
 import React from "react";
 // Libraries
 import { useQuery } from "@tanstack/react-query";
-import { Link, useParams } from "react-router-dom";
-
+import { Link, useParams, useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+// Components
 import createRequest from "../../utils/createRequest";
 import Reviews from "../../components/Reviews/Reviews";
 
@@ -14,6 +14,7 @@ import "./service.scss";
 
 const Service = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ["service"],
@@ -39,6 +40,8 @@ const Service = () => {
     enabled: !!userID,
   });
 
+  console.log(data);
+
   return (
     <section className="service">
       {isLoading ? (
@@ -48,7 +51,10 @@ const Service = () => {
       ) : (
         <main>
           <div className="left">
-            <div className="breadcrumbs">{`FIVERR > GRAPHICS > DESIGN`}</div>
+            <div className="breadcrumbs">
+              <span onClick={() => navigate("/")}>Workbuddy</span> {`>`}
+              <span onClick={() => navigate(-1)}>{data.category}</span>
+            </div>
             <h1>{data.title}</h1>
 
             {isLoadingUser ? (
@@ -56,31 +62,35 @@ const Service = () => {
             ) : errorUser ? (
               "Something went wrong"
             ) : (
-              <div className="user">
-                <img
-                  className="profile"
-                  src={dataUser.image || "/images/noavatar.jpg"}
-                  alt="user"
-                />
-                <span>{dataUser.username}</span>
-                {!isNaN(data.totalStars / data.starNumber) && (
-                  <div className="stars">
-                    {Array(Math.round(data.totalStars / data.starNumber))
-                      .fill()
-                      .map((img, i) => (
-                        <img key={i} src="/images/star.png" alt="star" />
-                      ))}
-                    <span>{Math.round(data.totalStars / data.starNumber)}</span>
-                  </div>
-                )}
-              </div>
-            )}
+              <>
+                <div className="user">
+                  <img
+                    className="profile"
+                    src={dataUser.image || "/images/noavatar.jpg"}
+                    alt="user"
+                  />
+                  <span>{dataUser.username}</span>
+                  {!isNaN(data.totalStars / data.starNumber) && (
+                    <div className="stars">
+                      {Array(Math.round(data.totalStars / data.starNumber))
+                        .fill()
+                        .map((img, i) => (
+                          <img key={i} src="/images/star.png" alt="star" />
+                        ))}
+                      <span>
+                        {Math.round(data.totalStars / data.starNumber)}
+                      </span>
+                    </div>
+                  )}
+                </div>
 
-            <Slider slidesToShow={1} slidesToScroll={1} className="slider">
-              {data.images.map((image) => (
-                <img key={image} src={image} alt="slide-img" />
-              ))}
-            </Slider>
+                <Slider slidesToShow={1} slidesToScroll={1} className="slider">
+                  {data.images.map((image) => (
+                    <img key={image} src={image} alt="slide-img" />
+                  ))}
+                </Slider>
+              </>
+            )}
 
             <h2>About this Service</h2>
             <p>{data.desc}</p>
@@ -138,8 +148,6 @@ const Service = () => {
                       <div className="desc">English, Spanish</div>
                     </div>
                   </div>
-                  <hr />
-                  <p>{dataUser.desc}</p>
                 </div>
               </div>
             )}

@@ -2,12 +2,14 @@ import React, { useEffect, useRef, useState } from "react";
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
 import { useQuery } from "@tanstack/react-query";
 import createRequest from "../../utils/createRequest";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./services.scss";
 
 const Services = () => {
   const [sort, setSort] = useState("Sales");
   const [open, setOpen] = useState(false);
+  const [pageTitle, setPageTitle] = useState("");
+
   const minRef = useRef();
   const maxRef = useRef();
 
@@ -34,23 +36,39 @@ const Services = () => {
     refetch();
   }, [sort]);
 
+  useEffect(() => {
+    let title = "";
+    if (search === "?category=uiux") title = "UI/UX Design";
+    else if (search === "?category=web") title = "Web Development";
+    else if (search === "?category=mobile") title = "Mobile Apps";
+    else if (search === "?category=ai") title = "AI Services";
+    else if (search === "?category=music") title = "Music Generation";
+    else if (search === "?category=cloud") title = "Cloud Services";
+    else if (search === "?category=animation") title = "Animation Cration";
+    else if (search === "?category=graphics") title = "Graphics Design";
+    else title = "";
+
+    setPageTitle(title);
+  }, []);
+
   const budgetApply = () => {
     refetch();
   };
 
+  console.log(data);
+
   return (
     <section className="services">
       <main>
-        <span className="breadcrumbs">{`FIVERR > GRAPHICS > DESIGN`}</span>
-        <h1>
-          {search === "?search=uiux"
-            ? "UI/UX Design"
-            : search === "?search=web"
-            ? "Web Development"
-            : "AI Services"}
-        </h1>
+        <span className="breadcrumbs">
+          <Link to="/">Workbuddy</Link>
+          {` > `}
+          <Link to="/services">{pageTitle}</Link>
+        </span>
+        <h1>{pageTitle}</h1>
         <p>
-          Explore the boundries of art and technology with Fiverr's AI artistcs
+          Explore the boundries of art and technology with Workbuddy's AI
+          artistcs
         </p>
         <div className="menu">
           <div className="left">
