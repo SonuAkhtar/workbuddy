@@ -10,6 +10,8 @@ function Login() {
   const [usernameError, setUsernameError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
 
+  const [showPassword, setShowPassword] = useState(false);
+
   const [error, setError] = useState(null);
 
   const navigate = useNavigate();
@@ -46,22 +48,44 @@ function Login() {
             <span className={`input_error ${usernameError && "show"}`}>
               Please enter your username
             </span>
-            <input
-              name="username"
-              type="text"
-              placeholder="Username"
-              onChange={(e) => setUsername(e.target.value)}
-            />
+
+            <div className="input_area">
+              <input
+                name="username"
+                type="text"
+                placeholder="Username"
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <i class="input_icon user fa-solid fa-user"></i>
+            </div>
 
             <span className={`input_error ${passwordError && "show"}`}>
               Please enter your password
             </span>
-            <input
-              name="password"
-              type="password"
-              placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <div className="input_area">
+              <input
+                name="password"
+                type={showPassword ? "text" : "password"}
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <span
+                onClick={() => {
+                  setShowPassword(!showPassword);
+                }}
+              >
+                <i
+                  className={`input_icon fa-solid fa-eye ${
+                    showPassword && "show"
+                  }`}
+                ></i>
+                <i
+                  className={`input_icon fa-solid fa-eye-slash ${
+                    !showPassword && "show"
+                  }`}
+                ></i>
+              </span>
+            </div>
 
             <span className="rememer">
               <input type="checkbox" />

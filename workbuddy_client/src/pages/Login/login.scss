@@ -37,10 +37,12 @@
           font-size: 0.7rem;
           padding: 0.25rem;
           background-color: var(--main-white);
+          color: var(--main-red);
           border-radius: 0.25rem;
           box-shadow: 0 1px 5px var(--main-gray-light);
           transform: translateY(10px);
           transition: all 0.3s ease;
+          z-index: 99;
           scale: 0;
 
           &.show {
@@ -48,27 +50,59 @@
           }
         }
 
-        input {
+        .input_area {
+          position: relative;
           width: 100%;
-          max-width: 300px;
-          outline: none;
-          padding: 1rem;
-          margin-bottom: 1rem;
-          border: 1px solid var(--main-gray-light);
+          max-width: 332px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           border-radius: 0.5rem;
-          transition: all 0.5s ease-in-out;
+          margin-bottom: 1rem;
 
-          &:focus {
-            border-radius: 2rem;
-            border-color: var(--main-green);
-            box-shadow: 0 1px 10px var(--main-gray-light);
+          input {
+            width: 100%;
+            max-width: 300px;
+            outline: none;
+            padding: 1rem;
+            border: 1px solid var(--main-gray-light);
+            border-radius: 0.5rem;
+            transition: all 0.5s ease-in-out;
+
+            &:focus {
+              border-radius: 2rem;
+              border-color: var(--main-green);
+              box-shadow: 0 1px 10px var(--main-gray-light);
+            }
+          }
+
+          .input_icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--main-gray-light);
+            transition: all 0.5s ease-in-out;
+            scale: 0;
+
+            &.show {
+              scale: 1;
+            }
+
+            &.user {
+              scale: 1;
+            }
           }
         }
 
         .rememer {
           width: 100%;
           max-width: 332px;
-          margin-top: 1rem;
+          margin: 1rem 0;
           display: flex;
           align-items: flex-start;
           justify-content: flex-start;
@@ -149,14 +183,6 @@
           input {
             max-width: 80%;
           }
-
-          .rememer {
-            max-width: calc(80% + 2rem);
-          }
-
-          button {
-            max-width: calc(80% + 2rem);
-          }
         }
       }
     }
@@ -167,9 +193,15 @@
 
     main {
       flex-direction: column;
+      padding-top: 1rem;
+      gap: 2rem;
 
       .left {
         width: 100%;
+
+        form {
+          padding: 0 1rem;
+        }
       }
     }
   }
